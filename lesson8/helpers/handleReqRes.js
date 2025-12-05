@@ -8,7 +8,8 @@ const url = require('url');
 // Import StringDecoder to properly decode stream data from requests
 const {StringDecoder} = require('string_decoder');
 
-//import env
+//import helper
+const {parseJson} = require('./utilities')
  
 
 // Import all application routes
@@ -64,7 +65,7 @@ handler.handleReqRes = (req,res)=>{
         realData += decoder.end();
 
         // Attach body data to requestProperties
-        requestProperties.body = realData;
+        requestProperties.body = parseJson(realData);
 
         // Select route handler if exists, else fallback to notFoundHandler
         const choosenHandler = routes[trimmedPath] ? routes[trimmedPath] : notFoundHandler;

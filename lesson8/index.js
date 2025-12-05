@@ -19,9 +19,9 @@ const app = {};
 
 //testing file system
 
-data.create('test','newFile',{'name':'Meow','Goal':'Software Engineer'},(err,data)=>{
-    console.log(err,data);
-})
+// data.create('test','newFile',{'name':'Meow','Goal':'Software Engineer'},(err,data)=>{
+//     console.log(err,data);
+// })
 
 
 //handle request and response
